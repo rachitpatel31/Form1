@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .search-bar {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .items-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .item-label {
+            flex: 1;
+            font-size: 14px;
+        }
+        .item-input {
+            flex: 0 0 30%;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .dropdown-container {
+            margin: 20px 0;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+    // Function to filter items based on search input
+    function filterItems() {
+        const searchQuery = document.getElementById("search").value.toLowerCase();
+        const items = document.querySelectorAll(".item-row");
+        
+        items.forEach(item => {
+            const label = item.querySelector(".item-label").innerText.toLowerCase();
+            
+            // Show item if it matches the search query
+            if (label.includes(searchQuery)) {
+                item.style.display = "flex";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+
+    // Function to exclude empty fields from submission
+    function removeEmptyFields(event) {
+        const form = event.target;
+        const inputs = form.querySelectorAll('input[type="text"]');
+        
+        // Loop through all text inputs
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                input.disabled = true;  // Disable empty fields so they are not submitted
+            }
+        });
+
+        // Allow form submission
+        return true;
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <input
+            type="text"
+            id="search"
+            name="search"
+            class="search-bar"
+            placeholder="Search items..."
+            oninput="filterItems()"
+        />
+
+        <form 
+            action="https://formsubmit.co/deltaengineering760@gmail.com" 
+            method="POST" 
+            onsubmit="removeEmptyFields(event)">
+            <!-- Hidden fields -->
+            <input type="hidden" name="_url" value="https://yourdomain.co/contact.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Form Submission Data">
+            <input type="hidden" name="_autoresponse" value="Thank you for your submission!">
+            
+            <div class="dropdown-container">
+                <label for="dropdown">Select a Site:</label>
+                <select id="dropdown" name="Order From" required>
+                    <option value="" disabled selected>Site List</option>
+                    <option value="Brent Cottage">Brent Cottage</option>
+                    <option value="Atlantic House (Thomas School)">Atlantic House (Thomas School)</option>
+                    <option value="Alysbury">Alysbury</option>
+                    <option value="Other">Other</option>
+                  
+                </select>
+				<button type="submit" class="submit-button">Submit</button>
+				<span> By Whom </span>
+				<input type="text" name="By Whom" placeholder="Enter your Name">
+            </div>
+
+            <div class="items-container">
+                <div class="item-row">
+                    <span class="item-label">45° Plastic Bend – 100mm</span>
+                    <input type="text" name="45° Plastic Bend – 100mm" class="item-input" placeholder="Enter value">
+                </div>
+                <div class="item-row">
+                    <span class="item-label">45° Plastic Bend – 125mm</span>
+                    <input type="text" name="45° Plastic Bend – 125mm" class="item-input" placeholder="Enter value">
+                </div>
+                <div class="item-row">
+                    <span class="item-label">45° Plastic Bend – 150mm</span>
+                    <input type="text" name="45° Plastic Bend – 150mm" class="item-input" placeholder="Enter value">
+                </div>
+                <div class="item-row">
+                    <span class="item-label">204×60 Thermal Insulation Shell – Horizontal 45 Deg Bend</span>
+                    <input type="text" name="204×60 Thermal Insulation Shell – Horizontal 45 Deg Bend" class="item-input" placeholder="Enter value">
+                </div>
+                
+                <div class="item-row">
+                    <span class="item-label">204×60 Thermal Insulation Shell – Vertical 45 Deg Bend</span>
+                    <input type="text" name="204×60 Thermal Insulation Shell – Vertical 45 Deg Bend" class="item-input" placeholder="Enter value">
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Plastic Duct Sealant</span>
+                    <input type="text" name="Plastic Duct Sealant" class="item-input" placeholder="Enter value">
+                </div>
+                <div class="item-row">
+                    <span class="item-label">PVC Tape</span>
+                    <input type="text" name="PVC_tape" class="item-input" placeholder="Enter value">
+              
+           </div>
+		   
+<div class="item-row">
+                    <span class="item-label">Megaduct Vertical 90 deg Bend 220x90m</span>
+                    <input type="text" name="Megaduct Vertical 90 deg Bend 220x90m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Sq-Round Elbow 150mm OD Rotatin</span>
+                    <input type="text" name="Megaduct Sq-Round Elbow 150mm OD Rotatin" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Plastic Duct Sealant White 310ml.</span>
+                    <input type="text" name="Plastic Duct Sealant White 310ml." class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Backdraught Shutter 150mm Dia -</span>
+                    <input type="text" name="Backdraught Shutter 150mm Dia -" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Black Studding End Caps M10 x 100</span>
+                    <input type="text" name="Black Studding End Caps M10 x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Susp Ring 150mm with Rubber - M8/M10 Dual</span>
+                    <input type="text" name="Susp Ring 150mm with Rubber - M8/M10 Dual" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Suspension Ring 100mm - M8/M10 Dual Boss-</span>
+                    <input type="text" name="Suspension Ring 100mm - M8/M10 Dual Boss-" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Suspension Ring 150mm - M8/M10 Dual Boss</span>
+                    <input type="text" name="Suspension Ring 150mm - M8/M10 Dual Boss" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Suspension Ring 250mm - M8/M10 Dual Boss</span>
+                    <input type="text" name="Suspension Ring 250mm - M8/M10 Dual Boss" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+          <div class="item-row">
+                    <span class="item-label">M10 LINDAPTER COMFLOR 60/ 80 DECKING FIXING ZINC </span>
+                    <input type="text" name="M10 LINDAPTER COMFLOR 60/ 80 DECKING FIXING ZINC" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">1.5mm twin earth grey cable standard - reels</span>
+                    <input type="text" name="1.5mm twin earth grey cable standard - reels" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">2.5mm twin earth grey cable standard -reels</span>
+                    <input type="text" name="2.5mm twin earth grey cable standard -reels" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">1.5mm twin earth three core grey cable standard -reel</span>
+                    <input type="text" name="1.5mm twin earth three core grey cable standard -reel" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">M10 LINDAPTER TR60 WEDGE & LOCKING PLATE </span>
+                    <input type="text" name="M10 LINDAPTER TR60 WEDGE & LOCKING PLATE" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">150 mm dia Plastic Pipe Conn</span>
+                    <input type="text" name="150 mm dia Plastic Pipe Conn" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Horizontal 45 deg Bend 220x90mm</span>
+                    <input type="text" name="Megaduct Horizontal 45 deg Bend 220x90mm" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Vertical 45 deg Bend 220x90mm</span>
+                    <input type="text" name="Megaduct Vertical 45 deg Bend 220x90mm" class="item-input" placeholder="Enter value">
+              
+           </div>
+<div class="item-row">
+                    <span class="item-label">Aluminium Tape 50mm Wide</span>
+                    <input type="text" name="Aluminium Tape 50mm Wide" class="item-input" placeholder="Enter value">
+              
+           </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Flat Channel Connector 220x90mm</span>
+                    <input type="text" name="Megaduct Flat Channel Connector 220x90mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Horizontal Tee Piece 220x90mm
+</span>
+                    <input type="text" name="Megaduct Horizontal Tee Piece 220x90mm
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Horizontal 90 deg Bend 220x90mm</span>
+                    <input type="text" name="Megaduct Horizontal 90 deg Bend 220x90mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Flat Channel 220x90mm x 2m</span>
+                    <input type="text" name="Megaduct Flat Channel 220x90mm x 2m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Megaduct Sq-Round Elbow 125 mm od Rotating
+</span>
+                    <input type="text" name="Megaduct Sq-Round Elbow 125 mm od Rotating
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Straight Adapter Megaduct 220x90 to System 12
+</span>
+                    <input type="text" name="Straight Adapter Megaduct 220x90 to System 12
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Flat Channel 204x60mm x 2m
+</span>
+                    <input type="text" name="Sys125 Flat Channel 204x60mm x 2m
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">150mm I/D x 2m Pipe
+</span>
+                    <input type="text" name="150mm I/D x 2m Pipe
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Plastic Pipe Conn
+</span>
+                    <input type="text" name="150mm dia Plastic Pipe Conn
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">90 deg 150 mm dia Plastic Bend
+</span>
+                    <input type="text" name="90 deg 150 mm dia Plastic Bend
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">45 deg 150mm dia Plastic Bend</span>
+                    <input type="text" name="45 deg 150mm dia Plastic Bend" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Quick Rel Clamp 60-170mm x 100
+</span>
+                    <input type="text" name="Quick Rel Clamp 60-170mm x 100
+" class="item-input" placeholder="Enter List of Items">
+                </div>
+				
+<div class="item-row">
+                    <span class="item-label">Suspension Band M6/M8 Holes 25m</span>
+                    <input type="text" name="Suspension Band M6/M8 Holes 25m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Curved Boot 100mm dia onto 150-160mm dia</span>
+                    <input type="text" name="Curved Boot 100mm dia onto 150-160mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Curved Boot 250mm dia onto 355-400mm dia</span>
+                    <input type="text" name="Curved Boot 250mm dia onto 355-400mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Curved Boot 250mm dia onto 450mm dia</span>
+                    <input type="text" name="Curved Boot 250mm dia onto 450mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Multiblade VCD 250mm dia</span>
+                    <input type="text" name="Multiblade VCD 250mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Access Door 450mm dia</span>
+                    <input type="text" name="Spiral Access Door 450mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Spiral Access Door 400mm dia</span>
+                    <input type="text" name="Spiral Access Door 400mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+
+
+<div class="item-row">
+                    <span class="item-label">Split Ring 400mm dia (pair)</span>
+                    <input type="text" name="Split Ring 400mm dia (pair)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 100mm x 3m</span>
+                    <input type="text" name="Spiral Duct 100mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 150mm x 3m</span>
+                    <input type="text" name="Spiral Duct 150mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 200mm x 3m</span>
+                    <input type="text" name="Spiral Duct 200mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 250mm x 3m</span>
+                    <input type="text" name="Spiral Duct 250mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 355mm x 3m</span>
+                    <input type="text" name="Spiral Duct 355mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 400mm x 3m</span>
+                    <input type="text" name="Spiral Duct 400mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Split Ring 200mm dia (pair)</span>
+                    <input type="text" name="Split Ring 200mm dia (pair)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Split Ring 250mm dia (pair)</span>
+                    <input type="text" name="Split Ring 250mm dia (pair)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Split Ring 355mm dia (pair)</span>
+                    <input type="text" name="Split Ring 355mm dia (pair)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Self Drill Screws 4.2x13mm x 1000</span>
+                    <input type="text" name="Self Drill Screws 4.2x13mm x 1000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">F/Damp & Frame H/Vel 150mm dia</span>
+                    <input type="text" name="F/Damp & Frame H/Vel 150mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">F/Damp & Frame H/Vel 450mm dia</span>
+                    <input type="text" name="F/Damp & Frame H/Vel 450mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">F/Damp & Frame H/Vel 400mm dia</span>
+                    <input type="text" name="F/Damp & Frame H/Vel 400mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">F/Damp & Frame H/Vel 250mm dia</span>
+                    <input type="text" name="F/Damp & Frame H/Vel 250mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Quick Rel Clamp 60-170mm x 100</span>
+                    <input type="text" name="Quick Rel Clamp 60-170mm x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Quick Rel Clamp 60-135mm x 100</span>
+                    <input type="text" name="Quick Rel Clamp 60-135mm x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">5/32 x 9.5mm Rivets x 1000</span>
+                    <input type="text" name="5/32 x 9.5mm Rivets x 1000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange F/D 250mm dia</span>
+                    <input type="text" name="Dry Wall Flange F/D 250mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange F/D 355mm dia</span>
+                    <input type="text" name="Dry Wall Flange F/D 355mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange F/D 400mm dia</span>
+                    <input type="text" name="Dry Wall Flange F/D 400mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Flanged SLIMFIT VCD 500 x 500</span>
+                    <input type="text" name="Flanged SLIMFIT VCD 500 x 500" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Flange Clamps 20/30mm x 100</span>
+                    <input type="text" name="Flange Clamps 20/30mm x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Flexi-Foot 250mm Long (Channel)</span>
+                    <input type="text" name="Flexi-Foot 250mm Long (Channel)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Flexi-Foot 400mm Long (Channel)</span>
+                    <input type="text" name="Flexi-Foot 400mm Long (Channel)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Flexi-Foot 600mm Long (Channel)</span>
+                    <input type="text" name="Flexi-Foot 600mm Long (Channel)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">220x90mm Duct Fire Sleeve</span>
+                    <input type="text" name="220x90mm Duct Fire Sleeve" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Balancing Damper 204x60mm</span>
+                    <input type="text" name="Balancing Damper 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">astic Duct Sealant White 310ml</span>
+                    <input type="text" name="astic Duct Sealant White 310ml" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Semi-Rigid Ducting 150mm x 3m</span>
+                    <input type="text" name="Semi-Rigid Ducting 150mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">125mm Plastic 45 deg Bend</span>
+                    <input type="text" name="125mm Plastic 45 deg Bend" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Size 8-12 Brown Plastic Wall Plug x 1000 (7mm -RP-B</span>
+                    <input type="text" name="Size 8-12 Brown Plastic Wall Plug x 1000 (7mm -RP-B" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Back Plates Female M8/M10 Thread x 100</span>
+                    <input type="text" name="Back Plates Female M8/M10 Thread x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">SDX-100</span>
+                    <input type="text" name="SDX-100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">SDX-150</span>
+                    <input type="text" name="SDX-150" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Weather Louvre 600x600mm</span>
+                    <input type="text" name="Weather Louvre 600x600mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+ <div class="item-row">
+                    <span class="item-label">Slotted Channel 40x20mm x 3m</span>
+                    <input type="text" name="Slotted Channel 40x20mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Full Nuts M8 x 100</span>
+                    <input type="text" name="Full Nuts M8 x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Full Nuts M10 x 100</span>
+                    <input type="text" name="Full Nuts M10 x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Square Plate Washer M10 x 100</span>
+                    <input type="text" name="Square Plate Washer M10 x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Studding M10 x 3m</span>
+                    <input type="text" name="Studding M10 x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Susp Ring 250mm with Rubber - M8/M10 Dual -</span>
+                    <input type="text" name="Susp Ring 250mm with Rubber - M8/M10 Dual -" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">M10 Channel Nuts x 100</span>
+                    <input type="text" name="M10 Channel Nuts x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">M6 Penny Washer x 100</span>
+                    <input type="text" name="M6 Penny Washer x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">M8 Penny Washer x 100</span>
+                    <input type="text" name="M8 Penny Washer x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">M10 Penny Washer x 100</span>
+                    <input type="text" name="M10 Penny Washer x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Motorised VCD 250dia</span>
+                    <input type="text" name="Motorised VCD 250dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">230v Motor to suit above</span>
+                    <input type="text" name="230v Motor to suit above" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">H Frame Foot 305x305mm (for 40x40mm)</span>
+                    <input type="text" name="H Frame Foot 305x305mm (for 40x40mm)" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Gasket Tape 15mm x 15m</span>
+                    <input type="text" name="Gasket Tape 15mm x 15m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Gasket Tape 20mm x 15m</span>
+                    <input type="text" name="Gasket Tape 20mm x 15m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Gasket Tape 25mm wide x 6mm x 15m</span>
+                    <input type="text" name="Gasket Tape 25mm wide x 6mm x 15m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">High Vel Duct Sealant 310ml - Water Based</span>
+                    <input type="text" name="High Vel Duct Sealant 310ml - Water Based" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">High Performance In-line Fan</span>
+                    <input type="text" name="High Performance In-line Fan" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Hex Set M10 x 25mm x 100</span>
+                    <input type="text" name="Hex Set M10 x 25mm x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bracket 2 hole x 100</span>
+                    <input type="text" name="90 deg Bracket 2 hole x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">20mm VerroMax Flange x 5m</span>
+                    <input type="text" name="20mm VerroMax Flange x 5m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">20mm VerroMax Flange Corners x 250</span>
+                    <input type="text" name="20mm VerroMax Flange Corners x 250" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">30mm VerroMax Flange x 5m</span>
+                    <input type="text" name="30mm VerroMax Flange x 5m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">30mm VerroMax Flange Corners x 150</span>
+                    <input type="text" name="30mm VerroMax Flange Corners x 150" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm I/D x 2m Pipe</span>
+                    <input type="text" name="150mm I/D x 2m Pipe" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">125mm I/D x 2m Pipe</span>
+                    <input type="text" name="125mm I/D x 2m Pipe" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Plastic Pipe Conn</span>
+                    <input type="text" name="150mm dia Plastic Pipe Conn" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Plastic Equal Tee</span>
+                    <input type="text" name="150mm dia Plastic Equal Tee" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">add</span>
+                    <input type="text" name="add" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Blue Roll 100m x 500mm wide</span>
+                    <input type="text" name="Blue Roll 100m x 500mm wide" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Circular Weather Louvre 150mm Ø c/w insect m</span>
+                    <input type="text" name="Circular Weather Louvre 150mm Ø c/w insect m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Straight Adapter Megaduct 220x90 to 150dia</span>
+                    <input type="text" name="Straight Adapter Megaduct 220x90 to 150dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Straight Adapter Megaduct 220x90 to System 12</span>
+                    <input type="text" name="Straight Adapter Megaduct 220x90 to System 12" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 204x60 - 125mm dia In line Adapter</span>
+                    <input type="text" name="Sys125 204x60 - 125mm dia In line Adapter" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Horizontal Tee Piece 204x60mm</span>
+                    <input type="text" name="Sys125 Horizontal Tee Piece 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Horizontal Tee Piece 204x60mm</span>
+                    <input type="text" name="Sys125 Horizontal Tee Piece 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Flat Channel 204x60mm x 2m</span>
+                    <input type="text" name="Sys125 Flat Channel 204x60mm x 2m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Horizontal 90 deg Bend 204x60mm</span>
+                    <input type="text" name="Sys125 Horizontal 90 deg Bend 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Sys125 Horizontal 45 deg Bend 204x60mm</span>
+                    <input type="text" name="Sys125 Horizontal 45 deg Bend 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Flat Channel 204x60mm x 2m</span>
+                    <input type="text" name="Sys125 Flat Channel 204x60mm x 2m" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">Sys125 Flat Channel Connector 204x60mm</span>
+                    <input type="text" name="Sys125 Flat Channel Connector 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Vertical 45 deg Bend 204x60mm</span>
+                    <input type="text" name="Sys125 Vertical 45 deg Bend 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Sys125 Sq-Round Elbow 125mm O/D Connectio</span>
+                    <input type="text" name="Sys125 Sq-Round Elbow 125mm O/D Connectio" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Metal Supply Air Valve 125mm dia - White</span>
+                    <input type="text" name="Metal Supply Air Valve 125mm dia - White" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Metal Air Valve 100mm dia - White</span>
+                    <input type="text" name="Metal Air Valve 100mm dia - White" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Metal Air Valve 125mm dia - White</span>
+                    <input type="text" name="Metal Air Valve 125mm dia - White" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Metal Air Valve 150mm dia - White</span>
+                    <input type="text" name="Metal Air Valve 150mm dia - White" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex 127mm diameter x 10m</span>
+                    <input type="text" name="Airflex 127mm diameter x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex insulated 127mm x 10m</span>
+                    <input type="text" name="Airflex insulated 127mm x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex 152mm diameter x 10m</span>
+                    <input type="text" name="Airflex 152mm diameter x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex 180mm diameter x 10m</span>
+                    <input type="text" name="Airflex 180mm diameter x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex 254mm diameter x 10m</span>
+                    <input type="text" name="Airflex 254mm diameter x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Airflex insulated 127mm x 10m</span>
+                    <input type="text" name="Airflex insulated 127mm x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Non/Airflex insulated 127mm x 10m</span>
+                    <input type="text" name="Non/Airflex insulated 127mm x 10m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Self Drill Screws 4.2x13mm x 1000</span>
+                    <input type="text" name="Self Drill Screws 4.2x13mm x 1000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Double Defl Grille 300x300mm White</span>
+                    <input type="text" name="Double Defl Grille 300x300mm White" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Megaduct Vertical 45 deg Bend 220x90</span>
+                    <input type="text" name="Domus Megaduct Vertical 45 deg Bend 220x90" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Megaduct Vertical 90 deg Bend 220x90</span>
+                    <input type="text" name="Domus Megaduct Vertical 90 deg Bend 220x90" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Flat Channel Connector 204x60mm</span>
+                    <input type="text" name="Domus Flat Channel Connector 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Flat Channel 204x60mm x 2m</span>
+                    <input type="text" name="Domus Flat Channel 204x60mm x 2m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Horizontal 90 deg Bend 204x60mm</span>
+                    <input type="text" name="Domus Horizontal 90 deg Bend 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Horizontal Tee Piece 204x60mm</span>
+                    <input type="text" name="Domus Horizontal Tee Piece 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Vertical 45 deg Bend 204x60mm</span>
+                    <input type="text" name="Domus Vertical 45 deg Bend 204x60mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Domus Sys125 Sq-Round Elbow 125mm O/D C</span>
+                    <input type="text" name="Domus Sys125 Sq-Round Elbow 125mm O/D C" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">ODE Starflex Ductwrap - 18mtr x 1.2 mtr x 25</span>
+                    <input type="text" name="ODE Starflex Ductwrap - 18mtr x 1.2 mtr x 25" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange H/Vel F/D 500 x 350</span>
+                    <input type="text" name="Dry Wall Flange H/Vel F/D 500 x 350" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange H/Vel F/D 500 x 300</span>
+                    <input type="text" name="Dry Wall Flange H/Vel F/D 500 x 300" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Dry Wall Flange F/D 400mm dia</span>
+                    <input type="text" name="Dry Wall Flange F/D 400mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">M10 Drop-in Anchor x 100</span>
+                    <input type="text" name="M10 Drop-in Anchor x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Cutting Disk 115mm - 1mm thick</span>
+                    <input type="text" name="Cutting Disk 115mm - 1mm thick" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 100mm x 3m</span>
+                    <input type="text" name="Spiral Duct 100mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 150mm x 3m</span>
+                    <input type="text" name="Spiral Duct 150mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 200mm x 3m</span>
+                    <input type="text" name="Spiral Duct 200mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 250mm x 3m</span>
+                    <input type="text" name="Spiral Duct 250mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 400mm x 3m</span>
+                    <input type="text" name="Spiral Duct 400mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Spiral Duct 450mm x 3m</span>
+                    <input type="text" name="Spiral Duct 450mm x 3m" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bend 100mm dia</span>
+                    <input type="text" name="90 deg Bend 100mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg 125mm dia Plastic Bend</span>
+                    <input type="text" name="90 deg 125mm dia Plastic Bend" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg 150mm dia Plastic Bend</span>
+                    <input type="text" name="90 deg 150mm dia Plastic Bend" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bend 100mm dia</span>
+                    <input type="text" name="90 deg Bend 100mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bend 150mm dia</span>
+                    <input type="text" name="90 deg Bend 150mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bend 200mm dia</span>
+                    <input type="text" name="90 deg Bend 200mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">90 deg Bend 250mm dia</span>
+                    <input type="text" name="90 deg Bend 250mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">45 deg Bend 100mm dia</span>
+                    <input type="text" name="45 deg Bend 100mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">45 deg Bend 150mm dia</span>
+                    <input type="text" name="45 deg Bend 150mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">45 deg Bend 180mm dia</span>
+                    <input type="text" name="45 deg Bend 180mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">45 deg Bend 250mm dia</span>
+                    <input type="text" name="45 deg Bend 250mm dia" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">45 deg 150mm dia Plastic Bend</span>
+                    <input type="text" name="45 deg 150mm dia Plastic Bend" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Square Plate Washer M10 x 100</span>
+                    <input type="text" name="Square Plate Washer M10 x 100" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Large Clear Bags</span>
+                    <input type="text" name="Large Clear Bags" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Aluminium Tape 50mm Wide</span>
+                    <input type="text" name="Aluminium Tape 50mm Wide" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Aluminium Tape 75mm Wide</span>
+                    <input type="text" name="Aluminium Tape 75mm Wide" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Aluminium Tape 100mm Wide</span>
+                    <input type="text" name="Aluminium Tape 100mm Wide" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Duct Wrap 1.2mx18mx25mm</span>
+                    <input type="text" name="Duct Wrap 1.2mx18mx25mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">125mm dia Spigot</span>
+                    <input type="text" name="125mm dia Spigot" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Spigot</span>
+                    <input type="text" name="150mm dia Spigot" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">224mm dia Spigot</span>
+                    <input type="text" name="224mm dia Spigot" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">250mm dia Spigot</span>
+                    <input type="text" name="250mm dia Spigot" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">125mm dia Plastic Equal Tee</span>
+                    <input type="text" name="125mm dia Plastic Equal Tee" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">125mm dia o/d Pipe Connector</span>
+                    <input type="text" name="125mm dia o/d Pipe Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">100mm dia Male Connector</span>
+                    <input type="text" name="100mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Male Connector</span>
+                    <input type="text" name="150mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">355mm dia Male Connector</span>
+                    <input type="text" name="355mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">250mm dia Male Connector</span>
+                    <input type="text" name="250mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">355mm dia Male Connector</span>
+                    <input type="text" name="355mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">400mm dia Male Connector</span>
+                    <input type="text" name="400mm dia Male Connector" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">100mm dia Weathering Cowl</span>
+                    <input type="text" name="100mm dia Weathering Cowl" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">200mm dia Weathering Cowl</span>
+                    <input type="text" name="200mm dia Weathering Cowl" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">150mm dia Equal Tee</span>
+                    <input type="text" name="150mm dia Equal Tee" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">100mm dia Equal Tee</span>
+                    <input type="text" name="100mm dia Equal Tee" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">100mm Dia In-line Fan</span>
+                    <input type="text" name="100mm Dia In-line Fan" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">600mm Cantilever arm</span>
+                    <input type="text" name="600mm Cantilever arm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">250mm dia Balancing Damper</span>
+                    <input type="text" name="250mm dia Balancing Damper" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">250mm dia End Cap</span>
+                    <input type="text" name="250mm dia End Cap" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Reducer 150mm-100mm</span>
+                    <input type="text" name="Reducer 150mm-100mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Reducer 150mm ID - 125mm OD</span>
+                    <input type="text" name="Reducer 150mm ID - 125mm OD" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Reducer 200mm-150mm</span>
+                    <input type="text" name="Reducer 200mm-150mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE SINGLE SOCKET PIPE D110 L3000</span>
+                    <input type="text" name="VALSIR BLACKFIRE SINGLE SOCKET PIPE D110 L3000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE BEND D.110 87 Degree 30'</span>
+                    <input type="text" name="VALSIR BLACKFIRE BEND D.110 87 Degree 30'" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE SWEPT BRANCH 110/110 87 Degree30</span>
+                    <input type="text" name="VALSIR BLACKFIRE SWEPT BRANCH 110/110 87 Degree30" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.110</span>
+                    <input type="text" name="VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.110" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE BEND D.110 45 Degree</span>
+                    <input type="text" name="VALSIR BLACKFIRE BEND D.110 45 Degree" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR CLOSING CAP BLACKFIRE D. 110</span>
+                    <input type="text" name="VALSIR CLOSING CAP BLACKFIRE D. 110" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR CLOSING CAP BLACKFIRE D. 50</span>
+                    <input type="text" name="VALSIR CLOSING CAP BLACKFIRE D. 50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR CLOSING CAP BLACKFIRE D. 50</span>
+                    <input type="text" name="VALSIR CLOSING CAP BLACKFIRE D. 50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE SINGLE SOCKET PIPE D50 L3000</span>
+                    <input type="text" name="VALSIR BLACKFIRE SINGLE SOCKET PIPE D50 L3000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE SINGLE SOCKET PIPE D.32 L3000</span>
+                    <input type="text" name="VALSIR BLACKFIRE SINGLE SOCKET PIPE D.32 L3000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE SINGLE SOCKET PIPE D.32 L3000</span>
+                    <input type="text" name="VALSIR BLACKFIRE SINGLE SOCKET PIPE D.32 L3000" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE ECCENTRIC REDUCER D. 32/50</span>
+                    <input type="text" name="VALSIR BLACKFIRE ECCENTRIC REDUCER D. 32/50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR ECCENTRIC REDUCER BLACKFIRE D.40/50</span>
+                    <input type="text" name="VALSIR ECCENTRIC REDUCER BLACKFIRE D.40/50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE BEND D.50 87 Degree</span>
+                    <input type="text" name="VALSIR BLACKFIRE BEND D.50 87 Degree" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE BEND D.50 45 Degree</span>
+                    <input type="text" name="VALSIR BLACKFIRE BEND D.50 45 Degree" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR SLIDING CONNECTOR BLACKFIRE D. 50</span>
+                    <input type="text" name="VALSIR SLIDING CONNECTOR BLACKFIRE D. 50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.50</span>
+                    <input type="text" name="VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.50" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.32</span>
+                    <input type="text" name="VALSIR BLACKFIRE DOUBLE SOCKET SLEEVE D.32" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">VALSIR BLACKFIRE ECCENTRIC REDUCER D. 32/40</span>
+                    <input type="text" name="VALSIR BLACKFIRE ECCENTRIC REDUCER D. 32/40" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Walraven Rubber Lined Clip 104mm To 112mm</span>
+                    <input type="text" name="Walraven Rubber Lined Clip 104mm To 112mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">System 2000 Soil Saddle Pipe Clip PVCu Black 110mm</span>
+                    <input type="text" name="System 2000 Soil Saddle Pipe Clip PVCu Black 110mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">PolyPipe Waste Pipe Clip Black 50mm</span>
+                    <input type="text" name="PolyPipe Waste Pipe Clip Black 50mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">PolyPipe Waste Pipe Clip Black 32mm</span>
+                    <input type="text" name="PolyPipe Waste Pipe Clip Black 32mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">Walraven Rubber Lined Clip 53mm To 61mm</span>
+                    <input type="text" name="Walraven Rubber Lined Clip 53mm To 61mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+<div class="item-row">
+                    <span class="item-label">PolyPipe Waste Pipe Clip Black 40mm</span>
+                    <input type="text" name="PolyPipe Waste Pipe Clip Black 40mm" class="item-input" placeholder="Enter List of Items">
+                </div>
+
+        </form>
+    </div>
+</body>
+</html>
